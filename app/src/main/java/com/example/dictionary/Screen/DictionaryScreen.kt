@@ -44,7 +44,7 @@ fun DictionaryScreen(dictionaryViewModel: DictionaryViewModel = viewModel()) {
         } ?: emptyList()
 
         Text(
-            text = meaningsAndDefinitions.joinToString("\n"),
+            text = if(dictionaryViewModel.wrongWord) {"Word doesn't exist"} else {meaningsAndDefinitions.joinToString("\n")},
             modifier = Modifier.fillMaxWidth()
         )
     }
